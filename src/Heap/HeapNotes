@@ -1,0 +1,78 @@
+
+A heap is a specialized tree-based data structure that is commonly used in computer science to efficiently store and 
+retrieve data with a priority or ranking attached to each element. The heap is a complete binary tree where each node has 
+a key associated with it.
+
+Complete Binary Tree 
+A complete binary tree is a special type of binary tree in which every level of the tree is completely filled, 
+except possibly for the last level, which is filled from left to right.
+This means that all nodes on the last level are as far left as possible. In other words, a complete binary tree is a binary
+ tree where all levels are completely filled except possibly the last level, which is filled from left to right.
+
+There are two types of heaps: max heap and min heap. 
+In a max heap, the key of a parent node is always greater than or equal to the keys of its children. 
+In contrast, in a min heap, the key of a parent node is always less than or equal to the keys of its children.
+
+The heap data structure is often used in algorithms that require sorting, searching, and prioritization of data elements,
+such as Dijkstra's shortest path algorithm, Huffman coding, and sorting algorithms like heap sort. 
+The heap also provides efficient access to the maximum or minimum element of a collection, making it useful in various 
+applications such as priority queues and scheduling algorithms.
+
+Most implementations of heap data structures add new elements to the leftmost available position in the last level of the 
+binary tree. This ensures that the binary tree maintains its complete binary tree property, which means that all levels of 
+the tree are completely filled, except possibly the last level, which is filled from left to right.
+
+Adding new elements to the leftmost position in the last level also helps to maintain the balance of the tree, which is 
+important for efficient access and retrieval operations. However, adding elements to the right side is also possible, but 
+it may require additional operations to maintain the balance and the heap property of the tree.
+
+
+/***** Store in Array ****/
+
+In a zero index array we start storing elements of Heap from index 1
+If parent is at index i then  :-
+left child  = 2*i ;
+right child = 2*i +1;
+parent = i/2;
+
+
+/***** Max Heap ****/
+
+Insert value 
+Step 1 - first add element to the next available index 
+Step 2 - Then try to find the correct position of that element such that Max heap property remain intact.
+        For that  compare , is it smaller then root or not . If not swap the values do it again until it reaches to correct postion
+
+Delete root element
+Step 1 - Make index 1 value equal to last index  .Now last index value become root
+Step 2- Then Delete the last index 
+Step 3 - Then compare with left and right child  to confirm max heap property is still intact.
+       If not swap values from Max Of( left , right)     
+        
+Note - Leaf nodes are allways consider that they follow Max and Min heap property . That is if and array is of size n 
+then from N/2 +1 to N all of these are a leaf node and if we have to check the given tree is max or min heap or not 
+we check from index  n/2 to 1 . To sort elements at correct postion  from heapify method it takes O(logn) time
+
+To place the node to right position in Max and min heap we use heapify function
+
+public void heapify(int[] arr , int index ){ //O (n) 
+   int largest = i ;
+   int left = 2* index ; //finding chlid 1 base indexing
+   int right = 2*index+1 ;
+   int n = arr.size;
+   
+   // for 0 based indexing left < n 
+   if (left <= n && arr[left] > arr[largest]){
+      largest  = left;
+   }
+     // for 0 based indexing right < n
+   if (right <= n && arr[right] > arr[largest]){
+      largest  = right;
+   }
+   
+   if (largest != index){ // that means root is smaller then child 
+       swap(arr[index] , arr[largest])
+       heapify(arr,largest); // recursive call to check again the new elemet is at correct postion or not 
+   }
+ 
+}        

@@ -1,0 +1,15 @@
+/******************1**************/
+TO access 2D array in form of 1d 
+Let see we have row =4  and Column = 6
+And we want to find at which index of 1D array Arr[3][2]  value will be placed  and vice versa 
+
+/****FORMULA***/
+
+2D to 1D    index = Total Column * row + col
+
+1D to 2D     row = index/Total Column   col = index% Total Column  Note(it will be 0 based indexing 0,1,2... )
+
+/******************2**************/
+Jaha bhi circular swap jesa kuch ho waha pr modulus % use ayega
+like rotate array by k jesa questions me
+ 

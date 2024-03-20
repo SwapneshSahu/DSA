@@ -1,0 +1,21 @@
+Top Down  -> Recursion + Memorization (Store the value of sub problem) 
+Bottom Up -> Tabulation 
+Space Optimization 
+
+
+Top-Down refers to a programming approach where a problem is broken down into subproblems, and then solved recursively. 
+This approach can be combined with memorization (also known as Memorization) to optimize the time complexity of the 
+algorithm. In Memorization, the solutions to subproblems are stored in a cache, so that if the same subproblem is 
+encountered again, the solution can be retrieved from the cache instead of recomputing it.
+
+Bottom-Up refers to a programming approach where subproblems are solved iteratively and systematically, starting from the 
+smallest subproblem and building up to the larger problem. This approach can be implemented using tabulation, where the 
+solutions to subproblems are stored in a table, and the table is filled in a bottom-up manner.
+
+Space optimization refers to techniques for reducing the memory footprint of an algorithm. One common technique is to use 
+dynamic programming to avoid recomputing solutions to subproblems. Another technique is to use data structures that minimize
+ the amount of memory used, such as bitmaps or compressed data structures. Other techniques include reusing memory, such as 
+ in-place sorting, or compressing data on the fly using algorithms like Huffman coding.
+
+Overall, these programming approaches and optimization techniques are useful for solving complex problems efficiently and 
+effectively.

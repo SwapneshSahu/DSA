@@ -1,0 +1,20 @@
+XOR (exclusive OR) is a logical bitwise operator that returns true (1) if and only if its two operands have different values. In other words, it returns true when one of the operands is true and the other one is false. If both operands have the same value (either both true or both false), XOR returns false (0).
+
+The truth table for XOR is as follows:
+
+Operand 1	Operand 2	Result
+false	false	false
+false	true	true
+true	false	true
+true	true	false
+In Java, the XOR operator is represented by the caret symbol (^).
+ It can be used with integral data types (e.g., int, long, byte, short) and boolean values.
+ To use XOR in Java, you can follow these examples:
+ 
+ 
+  int x = 5; // binary: 0101
+  int y = 3; // binary: 0011
+        
+  int result = x ^ y; // binary result: 0110 (decimal: 6)
+        
+      System.out.println("x ^ y = " + result); // Output: x ^ y = 6
